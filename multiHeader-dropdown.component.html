@@ -1,0 +1,13 @@
+<div class="multi-dropdown">
+    <ul class="list-unstyled" >
+            <span class="init" (click)="dropDownToggle=!dropDownToggle">{{placeHolder}}</span>
+          
+    <ng-container *ngIf="dropDownToggle">
+        <ng-container  *ngFor="let headers of source; trackBy: trackByFn">
+        <li class="header">{{headers?.label}}</li>
+        <li *ngFor="let items of headers?.items; trackBy: trackByFn" (click)="selectItem(items);">{{items?.label}}</li>
+        </ng-container>
+    </ng-container>
+    </ul>
+
+</div>
